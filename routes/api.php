@@ -14,7 +14,7 @@
 Route::post('register', 'API\UserController@register');
 Route::post('login', 'API\UserController@login');
 Route::post('activelogin', 'API\UserController@activelogin');
-
+Route::post('changepassword', 'API\UserController@changepassword');
 
 // Route::middleware('auth:api')->group( function () {
 //     Route::resource('articles', 'API\ArticleController');
