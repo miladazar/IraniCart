@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Article;
 
 class Userarticle
 {
@@ -15,7 +16,6 @@ class Userarticle
      */
     public function handle($request, Closure $next)
     {
-
          $article = Article::find($request->id);
          if(!isset($article)){ 
             $response = [
