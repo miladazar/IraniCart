@@ -89,7 +89,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function changepassword()
+    public function changepassword(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'code' => 'required',
@@ -133,11 +133,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function activelogin()
+    public function activelogin(Request $request)
     {
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
+            'email' => 'required',
             'type' => 'required',
         ]);
  
