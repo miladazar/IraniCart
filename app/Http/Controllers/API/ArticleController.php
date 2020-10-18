@@ -175,7 +175,7 @@ class ArticleController extends Controller
         $validator = Validator::make($input, [
             'content' => 'required',
             'category'=>'required',
-            'author' =>'author',
+            'author' =>'required',
         ]);
  
         if ($validator->fails()) {
