@@ -40,7 +40,7 @@ class ArticleController extends Controller
  
         $validator = Validator::make($input, [
             'content' => 'required',
-            'author' => 'required',
+//             'author' => 'required',
              'category'=>'required',
         ]);
  
@@ -53,7 +53,7 @@ class ArticleController extends Controller
             ];
             return response()->json($response, 404);
         }
- 
+        $input['author']=$request->user()->email;
         $article = Article::create($input);
         $data = $article->toArray();
  
