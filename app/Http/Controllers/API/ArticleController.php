@@ -175,6 +175,7 @@ class ArticleController extends Controller
         $validator = Validator::make($input, [
             'content' => 'required',
             'category'=>'required',
+            'author' =>'author',
         ]);
  
         if ($validator->fails()) {
@@ -186,7 +187,10 @@ class ArticleController extends Controller
             return response()->json($response, 404);
         }
 
-        $articles=Article::where('category',$input['category'])->where('content', 'LIKE', '%' . $input['content'] . '%')->toArray();
+        $articles=Article::where('category',$input['category'])
+            ->orWhere('author',$input['author'])
+            ->orWhere('content', 'LIKE', '%' . $input['content'] . '%')
+            ->toArray();
         $data = $article->toArray();
  
         $response = [
