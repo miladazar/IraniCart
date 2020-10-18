@@ -8,8 +8,7 @@
 - php artisan serv
 
 
-
-##فایل فراخوانی وب سرویس با نام Iranicart.postman_collection در پوشه روت آپلود شد
+## postman api root/Iranicart.postman_collection.json
 
 
 
